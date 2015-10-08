@@ -2632,7 +2632,16 @@ class WhatsProt
 
             }
             if ($node->getAttribute("type") == "text" && $node->getChild(0)->getTag() == 'enc') {
-                // TODO
+                $this->eventManager()->fire("onGetEncryptedMessage",
+                    array(
+                        $this->phoneNumber,
+                        $node->getAttribute('from'),
+                        $node->getAttribute('id'),
+                        $node->getAttribute('type'),
+                        $node->getAttribute('t'),
+                        $node->getAttribute("notify"),
+                        $node->getChild(0)->getData()
+                    ));
                 if ($autoReceipt) {
                     $this->sendReceipt($node, $type);
                 }

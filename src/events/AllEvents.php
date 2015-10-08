@@ -54,6 +54,7 @@ abstract class AllEvents
     public function onDissectPhoneFailed($mynumber) {}
     public function onGetAudio($mynumber, $from, $id, $type, $time, $name, $size, $url, $file, $mimeType, $fileHash, $duration, $acodec, $fromJID_ifGroup = null) {}
     public function onGetBroadcastLists($mynumber, $broadcastLists){}
+    public function onGetEncryptedMessage($mynumber, $from, $id, $type, $time, $name, $encData) {}
     public function onGetError($mynumber, $from, $id, $data, $errorType = null) {}
     public function onGetExtendAccount($mynumber, $kind, $status, $creation, $expiration) {}
     public function onGetFeature($mynumber, $from, $encrypt) {}
