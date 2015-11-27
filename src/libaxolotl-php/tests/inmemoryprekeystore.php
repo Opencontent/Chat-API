@@ -10,7 +10,7 @@ require_once __DIR__."/../InvalidKeyIdException.php";
 class InMemoryPreKeyStore extends PreKeyStore{
     protected $store;
     public function InMemoryPreKeyStore(){
-        $this->store = [];
+        $this->store = array();
     }
 
     public function loadPreKey($preKeyId){

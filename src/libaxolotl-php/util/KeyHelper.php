@@ -50,7 +50,7 @@ class KeyHelper{
     @return the list of generated PreKeyRecords.
    */
    public static function generatePreKeys($start, $count){
-        $results = [];
+        $results = array();
         $start -= 1;
         for ($i=0;$i<$count;$i++){
             $preKeyId = (($start + $i) % (Medium::MAX_VALUE-1)) + 1;

@@ -2013,7 +2013,7 @@ class WhatsProt
         $number = ExtractNumber($node->getAttribute("participant"));
 
       if(!isset($this->pending_nodes[$number]))
-        $this->pending_nodes[$number] = [];
+        $this->pending_nodes[$number] = array();
 
       $this->pending_nodes[$number][] = $node;
     }

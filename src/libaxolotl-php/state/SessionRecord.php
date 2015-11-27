@@ -10,7 +10,7 @@ class SessionRecord{
         :type sessionState: SessionState
         :type serialized: str
         */
-        $this->previousStates = [];
+        $this->previousStates = array();
         if($sessionState != null){
             $this->sessionState = $sessionState;
             $this->fresh = false;
@@ -76,7 +76,7 @@ class SessionRecord{
     }
 
     public function serialize(){
-        $previousStructures = [];
+        $previousStructures = array();
         //previousState.getStructure() for previousState in self.previousStates
         $record = new Textsecure_RecordStructure();
         $record->setCurrentSession($this->sessionState->getStructure());

@@ -49,7 +49,7 @@ function niceVarDump($obj,$ident = 0){
                 if(is_subclass_of($obj, "ProtobufMessage") && $k == "values"){
                     $r = new ReflectionClass($obj);
                     $constants = $r->getConstants();
-                    $newVar = [];
+                    $newVar = array();
                     foreach($constants as $ckey=>$cval){
                         if(substr($ckey,0,3) != "PB_")
                             $newVar[$ckey] = $var[$cval];
@@ -380,7 +380,7 @@ class SessionBuilderTest extends PHPUnit_Framework_TestCase{
             $loopingPlaintext = $aliceSessionCipher->decryptMsg(new WhisperMessage(null,null,null,null,null,null,null,null,$bobLoopingMessage->serialize()));
             $this->assertEquals($loopingPlaintext, $loopingMessage);
         }
-        $aliceOutOfOrderMessages = [];
+        $aliceOutOfOrderMessages = array();
 
         for($i=0;$i<10;$i++){
             $loopingMessage = "What do we mean by saying that existence precedes essence? " .

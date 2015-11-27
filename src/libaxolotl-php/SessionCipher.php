@@ -148,7 +148,7 @@ class SessionCipher
         */
 
         $previousStates = $sessionRecord->getPreviousSessionStates();
-        $exceptions = [];
+        $exceptions = array();
         try{
             $sessionState = new SessionState($sessionRecord->getSessionState());
             $plaintext = $this->decryptWithSessionState($sessionState, $cipherText);

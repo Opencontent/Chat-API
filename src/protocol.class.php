@@ -87,7 +87,7 @@ class ProtocolNode
     /**
     * @param ProtocolNode $node
     */
-    public function removeChild($tag, $attrs = []){
+    public function removeChild($tag, $attrs = array()){
         if($this->children){
           if(is_int($tag)){
               if(isset($this->childen[$tag])){
@@ -206,7 +206,7 @@ class ProtocolNode
      * @param array $attrs
      * @return ProtocolNode
      */
-    public function getChild($tag, $attrs = [])
+    public function getChild($tag, $attrs = array())
     {
         $ret = null;
         if ($this->children) {

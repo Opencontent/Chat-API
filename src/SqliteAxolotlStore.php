@@ -142,7 +142,7 @@ class axolotlSqliteStore implements axolotlInterface
       $query = $this->db->prepare($sql);
 
       $query->execute();
-      $prekeys = [];
+      $prekeys = array();
       while($row = $query->fetch(PDO::FETCH_ASSOC))
       {
           if($row != null && $row !== false)
@@ -211,7 +211,7 @@ class axolotlSqliteStore implements axolotlInterface
         $query = $this->db->prepare($sql);
 
         $query->execute();
-        $keys = [];
+        $keys = array();
         while($row = $query->fetch(PDO::FETCH_ASSOC))
         {
             if($row != null && $row !== false)
@@ -392,7 +392,7 @@ class axolotlSqliteStore implements axolotlInterface
               ':recipient_id' => $recipientId
           )
       );
-      $deviceIds = [];
+      $deviceIds = array();
       while($row = $query->fetch(PDO::FETCH_ASSOC))
       {
          $deviceIds[] = $row['device_id'];

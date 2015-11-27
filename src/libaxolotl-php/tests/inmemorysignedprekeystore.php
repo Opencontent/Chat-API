@@ -8,7 +8,7 @@
 class InMemorySignedPreKeyStore extends SignedPreKeyStore{
     protected $store;
     public function InMemorySignedPreKeyStore(){
-        $this->store = [];
+        $this->store = array();
     }
 
     public function loadSignedPreKey($signedPreKeyId){
@@ -19,7 +19,7 @@ class InMemorySignedPreKeyStore extends SignedPreKeyStore{
         return new  SignedPreKeyRecord(null,null,null,null, $this->store[$signedPreKeyId]);
     }
     public function loadSignedPreKeys(){
-        $results = [];
+        $results = array();
         foreach ($this->store as $serialized)
         {
             $results[] = new SignedPreKeyRecord(null,null,null,null,$serialized);

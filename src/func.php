@@ -303,7 +303,7 @@ function niceVarDump($obj,$ident = 0){
                 if(is_subclass_of($obj, "ProtobufMessage") && $k == "values"){
                     $r = new ReflectionClass($obj);
                     $constants = $r->getConstants();
-                    $newVar = [];
+                    $newVar = array();
                     foreach($constants as $ckey=>$cval){
                         if(substr($ckey,0,3) != "PB_")
                             $newVar[$ckey] = $var[$cval];

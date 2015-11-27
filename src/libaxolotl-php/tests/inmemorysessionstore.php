@@ -7,7 +7,7 @@ require_once __DIR__ ."/../state/SessionRecord.php";
 class InMemorySessionStore extends SessionStore{
     protected $sessions;
     public function InMemorySessionStore(){
-        $this->sessions = [];
+        $this->sessions = array();
     }
 
 
@@ -20,7 +20,7 @@ class InMemorySessionStore extends SessionStore{
     }
 
     public function getSubDeviceSessions($recepientId){
-        $deviceIds = [];
+        $deviceIds = array();
         foreach(array_keys($this->sessions) as $key){
             $k = $this->SplitKey($key);
             if ($k[0] == $recepientId)

@@ -43,7 +43,7 @@ class SenderKeyRecord{
 
     public function setSenderKeyState($id, $iteration, $chainKey, $signatureKey){
         unset($this->senderKeyStates);
-        $this->senderKeyStates = [];
+        $this->senderKeyStates = array();
         $this->senderKeyStates[] = new SenderKeyState($id, $iteration, $chainKey, null, null, $signatureKey);
     }
 

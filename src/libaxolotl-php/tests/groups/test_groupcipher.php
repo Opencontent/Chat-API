@@ -42,7 +42,7 @@ function niceVarDump($obj,$ident = 0){
                 if(is_subclass_of($obj, "ProtobufMessage") && $k == "values"){
                     $r = new ReflectionClass($obj);
                     $constants = $r->getConstants();
-                    $newVar = [];
+                    $newVar = array();
                     foreach($constants as $ckey=>$cval){
                         if(substr($ckey,0,3) != "PB_")
                             $newVar[$ckey] = $var[$cval];
@@ -176,7 +176,7 @@ class GroupCipherTest extends PHPUnit_Framework_TestCase{
 
         $bobSessionBuilder->processSender("groupWithBobInIt::aliceUserName", $aliceDistributionMessage);
 
-        $ciphertexts = [];
+        $ciphertexts = array();
         for ($i = 0; $i < 100; $i++)
             $ciphertexts[] = $aliceGroupCipher->encrypt("up the punks");
         while (count($ciphertexts) > 0)
